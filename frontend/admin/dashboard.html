@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dash</title>
+    <link rel="stylesheet" href="../styles/adminDash.css">
+    <link rel="icon" href="../images/favicon.ico">
+</head>
+<body>
+    <aside class="sidebar">
+        <logo>
+            <img src="../images/Gemini_Generated_Image_d26xkbd26xkbd26x.png" class="uniLogo" alt="Logo">
+        </logo>
+
+        <br><br>
+
+        <p><a href="./dashboard.html"><Strong>Dashboard Home</Strong></a></p>
+
+        <br>
+
+        <p><Strong>Students</Strong></p>
+        <ul>
+            <li><a href="#" id="createStudent-btn">Add Student</a></li>
+            <li><a href="#" id="updateStudent-btn">Update Student</a></li>
+            <li><a href="#" id="removeStudent-btn">Remove Student</a></li>
+        </ul>
+
+        <p><Strong>Teachers</Strong></p>
+        <ul>
+            <li><a href="#" id="createTeacher-btn">Add Teacher</a></li>
+            <li><a href="#" id="updateTeacher-btn">Update Teacher</a></li>
+            <li><a href="#" id="removeTeacher-btn">Remove Teacher</a></li>
+        </ul>
+
+        <button class="btn-logout">Logout</button>
+    </aside>
+    
+    <div class="main-content">
+        <h2>Students</h2>
+        <table id="studentsTable" class="student-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Class</th>
+                    <th>Roll No.</th>
+                    <th>Attendance</th>
+                    <th>Grades</th>
+                </tr>
+            </thead>
+            <tbody>
+                    
+            </tbody>
+        </table>
+        
+        <button class="createStdu" id="create-student">Create Student</button>
+        
+        <h2>Teachers</h2>
+        <table id="teachersTable" class="teacher-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Subject</th>
+                    <th>EmployeeId</th>
+                    <th>Phone No.</th>
+                    <th>Email</th>
+                    <th>Assigned Classes</th>
+                </tr>
+            </thead>
+            <tbody>
+                        
+            </tbody>
+        </table>
+
+        <button class="createTeach" id="create-teacher">Create Teacher</button>
+    </div>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span id="closePopupBtn">&times;</span>
+            <h2></h2>
+            <div id="popup-body"></div>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.11.0/axios.min.js"
+    integrity="sha512-h9644v03pHqrIHThkvXhB2PJ8zf5E9IyVnrSfZg8Yj8k4RsO4zldcQc4Bi9iVLUCCsqNY0b4WXVV4UB+wbWENA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+    <script src="../script/adminScript.js"></script>
+</body>
+</html>

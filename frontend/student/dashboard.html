@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="../styles/studentDash.css">
+    <link rel="icon" href="../images/favicon.ico">
+</head>
+<body>
+    <header class="header">
+        <h1>Student Dashboard</h1>
+        <div class="header-actions">
+        <span class="student-name">Welcome, Student</span>
+        <button class="btn-logout">Logout</button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="tiles">
+            <div class="tile" id="profileTile">
+                <h2>Profile</h2>
+            </div>
+            <div class="tile" id="attendanceTile">
+                <h2>Attendance</h2>
+            </div>
+            <div class="tile" id="gradesTile">
+                <h2>Grades</h2>
+            </div>
+            </section>
+
+            <section id="content-area">
+            <h2>Select a tile above</h2>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.11.0/axios.min.js"
+    integrity="sha512-h9644v03pHqrIHThkvXhB2PJ8zf5E9IyVnrSfZg8Yj8k4RsO4zldcQc4Bi9iVLUCCsqNY0b4WXVV4UB+wbWENA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+  <script src="../script/studentScript.js"></script>
+</body>
+</html>

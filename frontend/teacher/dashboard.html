@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Dashboard</title>
+  <link rel="stylesheet" href="../styles/teacherDash.css">
+  <link rel="icon" href="../images/favicon.ico">
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <h2>School ERP</h2>
+      <nav>
+        <ul>
+          <li><a href="./dashboard.html">Dashboard</a></li>
+          <li><a href="" id="stdList">Students List</a></li>
+          <li><a href="" id="stdAttend">Mark Attendance</a></li>
+          <li><a href="" id="stdGrade">Update Grades</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="header">
+        <h1>Teacher Dashboard</h1>
+        <div class="header-actions">
+          <span class="teacher-name"></span>
+          <button class="btn-logout">Logout</button>
+        </div>
+      </header>
+
+      <section class="students-table">
+        <h2>Students</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Class</th>
+              <th>Roll No</th>
+              <th>Attendance</th>
+              <th>Grades</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <div id="attendanceModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Mark Attendance</h2>
+      <form>
+        <label>Student:</label>
+        <input type="text" id="attendanceStudent" placeholder="Student Roll Number" readonly>
+        <label>Status:</label>
+        <select title="attendance-select">
+          <option value="Present">Present</option>
+          <option value="Absent">Absent</option>
+        </select>
+        <button type="submit" class="btn">Save</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="gradeModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Update Grade</h2>
+      <form>
+        <label>Student:</label>
+        <input type="text" id="gradeStudent" placeholder="Student Name" readonly>
+        <label>Subject:</label>
+        <input type="text" id="gradeSubject" placeholder="Enter subject" required>
+        <label>Score:</label>
+        <input type="number" id="gradeScore" placeholder="Enter score" required>
+        <label>Grade:</label>
+        <input type="text" id="gradeValue" placeholder="Enter grade (e.g. A+)" required>
+        <button type="submit" class="btn">Update</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.11.0/axios.min.js"
+  integrity="sha512-h9644v03pHqrIHThkvXhB2PJ8zf5E9IyVnrSfZg8Yj8k4RsO4zldcQc4Bi9iVLUCCsqNY0b4WXVV4UB+wbWENA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"></script>
+  <script src="../script/teacherScript.js"></script>
+</body>
+</html>

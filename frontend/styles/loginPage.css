@@ -1,0 +1,60 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+body{ 
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to top right, #000000 60%, #b57aff);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+}
+
+form{
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.uniLogo {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: 10px black;
+}
+
+input{
+    width: 75%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #000000;
+    border-radius: 10px;
+}
+
+input:hover{
+    border: 1px solid #000000;
+    cursor: pointer;
+}
+
+button{
+    width: 50%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    background-color: #63428b;
+    color: #ffffff;
+}
+
+button:hover {
+    transition: 0.95s ease-in-out;
+    background-color: #b57aff;
+    cursor: pointer;
+}
