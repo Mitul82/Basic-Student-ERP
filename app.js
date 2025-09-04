@@ -41,7 +41,7 @@ app.use(express.static('./frontend'));
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 
 // const sslServer = https.createServer({
 //   key: fs.readFileSync(process.env.SSL_KEY_PATH),

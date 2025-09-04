@@ -9,7 +9,7 @@ const changePassword = async (req, res) => {
       return res.status(400).json({ msg: "Both fields are required" });
     }
 
-    const user = await User.findById(req.user.userId).select("+password");
+    const user = await User.findById(req.user.id).select("+password");
     if (!user) {
       return res.status(404).json({ msg: "User not found" });
     }

@@ -3,9 +3,10 @@ const attendanceTile = document.getElementById("attendanceTile");
 const gradesTile = document.getElementById("gradesTile");
 const logoutBtn = document.querySelector(".btn-logout");
 const contentArea = document.getElementById("content-area");
-const changePasswordBtn = document.getElementById("changePasswordBtn");
+const changePasswordBtn = document.querySelector(".btn-change-password");
 const passwordModal = document.getElementById("passwordModal");
 const passwordForm = document.getElementById("passwordForm");
+const closeButton = document.querySelectorAll(".close");
 
 axios.interceptors.request.use(config => {
   const token = localStorage.getItem("token");
@@ -22,6 +23,23 @@ function openModal(modal) {
 function closeModal(modal) {
   modal.style.display = "none";
 }
+
+changePasswordBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  openModal(passwordModal);
+});
+
+closeButton.forEach(btn => {
+  btn.addEventListener("click", () => {
+    btn.closest(".modal").style.display = "none";
+  });
+});
+
+window.addEventListener("click", (e) => {
+  if (e.target.classList.contains("modal")) {
+    e.target.style.display = "none";
+  }
+});
 
 profileTile.addEventListener("click", async () => {
   try {
