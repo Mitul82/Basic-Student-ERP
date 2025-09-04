@@ -41,8 +41,9 @@ app.use(express.static('./frontend'));
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 
+// server instantiation for self signed ssl certificates
 // const sslServer = https.createServer({
 //   key: fs.readFileSync(process.env.SSL_KEY_PATH),
 //   cert: fs.readFileSync(process.env.SSL_CERT_PATH),
