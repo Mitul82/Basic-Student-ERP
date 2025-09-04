@@ -39,7 +39,7 @@ function studentFormHandler(e) {
     name: formData.get("name"),
     fatherName: formData.get("fatherName"),
     className: formData.get("className"),
-    rollNo: formData.get("rollNo"),
+    admissionno: formData.get("admissionno"),
     grades: [],
     attendance: [],
   };
@@ -67,7 +67,7 @@ function updateStudentHandler(studentId, e) {
     name: formData.get("name"),
     fatherName: formData.get("fatherName"),
     className: formData.get("className"),
-    rollNo: formData.get("rollNo"),
+    admissionno: formData.get("admissionno"),
   };
   axios.put(`/api/v1/admin/students/${studentId}`, data).then(() => { fetchStudents(); popup.style.display = "none"; });
 }
@@ -104,7 +104,7 @@ createStudentBtn.addEventListener("click", () => openPopup(
     <input type="text" name="name" placeholder="Student Name" required><br>
     <input type="text" name="fatherName" placeholder="Father's Name" required><br>
     <input type="text" name="className" placeholder="Class" required><br>
-    <input type="number" name="rollNo" placeholder="Roll No" required><br>
+    <input type="number" name="admissionno" placeholder="Admission no" required><br>
     <button type="submit">Save</button>
   </form>`,
   studentFormHandler
@@ -139,7 +139,7 @@ updateStudentBtn.addEventListener("click", async () => {
       <label>Name:</label><input type="text" name="name" required><br>
       <label>Father's Name:</label><input type="text" name="fatherName" required><br>
       <label>Class:</label><input type="text" name="className" required><br>
-      <label>Roll No:</label><input type="number" name="rollNo" required><br>
+      <label>Admission No:</label><input type="number" name="admissionno" required><br>
       <button type="submit">Update</button>
     </form>`,
     (e) => {
