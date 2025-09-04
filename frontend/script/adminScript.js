@@ -244,15 +244,5 @@ logoutBtn.addEventListener("click", () => {
   window.location.href = "/";
 });
 
-window.addEventListener("popstate", () => {
-  localStorage.removeItem("token");
-  window.location.href = "/";
-});
-
-window.history.pushState(null, "", window.location.href);
-window.addEventListener("popstate", () => {
-  window.history.pushState(null, "", window.location.href);
-});
-
 fetchStudents();
 fetchTeachers();
