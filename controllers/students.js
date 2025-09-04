@@ -39,4 +39,20 @@ const viewGrades = async (req, res) => {
   }
 };
 
-module.exports = { viewProfile, viewAttendance, viewGrades };
+const studentInfo = async (req, res) => {
+  try {
+    const student = await Student.findOne({ user: req.user.id }).populate("user", "username email role");
+    if (!student) return res.status(404).json({ msg: "Student` not found" });
+
+    res.status(200).json({ 
+      student: {
+        name: student.name,
+      }
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ msg: "Server error" });
+  }
+}
+
+module.exports = { viewProfile, viewAttendance, viewGrades, studentInfo };

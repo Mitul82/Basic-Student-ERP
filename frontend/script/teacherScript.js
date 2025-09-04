@@ -156,7 +156,6 @@ gradeModal.querySelector("form").addEventListener("submit", async (e) => {
 async function loadTeacherInfo() {
   try {
     const res = await axios.get('/api/v1/teachers/me');
-    console.log(res);
     const teacher = res.data.teacher;
 
     document.querySelector(".teacher-name").textContent = `Welcome, ${teacher.name}`;

@@ -77,6 +77,19 @@ gradesTile.addEventListener("click", async () => {
   }
 });
 
+async function loadStudentInfo() {
+  try {
+    const res = await axios.get('/api/v1/student/me');
+    console.log(res);
+    const student = res.data.student;
+
+    document.querySelector(".student-name").textContent = `Welcome, ${student.name}`;
+
+  } catch (err) {
+    console.error("Error loading student info:", err);
+  }
+}
+
 logoutBtn.addEventListener("click", () => {
   localStorage.removeItem("token");
   window.location.href = "/";
@@ -91,3 +104,5 @@ window.history.pushState(null, "", window.location.href);
 window.addEventListener("popstate", () => {
   window.history.pushState(null, "", window.location.href);
 });
+
+loadStudentInfo();
