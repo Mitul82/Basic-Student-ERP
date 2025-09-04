@@ -41,31 +41,18 @@ app.use(express.static('./frontend'));
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 
-const sslServer = https.createServer({
-  key: fs.readFileSync(process.env.SSL_KEY_PATH),
-  cert: fs.readFileSync(process.env.SSL_CERT_PATH),
-}, app);
-
-const start = async () => {
-  try {
-    await connectDB(process.env.MONGO_URI);
-    sslServer.listen(port, () => {
-      console.log(`SSL Server listening to port ${port}...`);
-    });
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-start();
+// const sslServer = https.createServer({
+//   key: fs.readFileSync(process.env.SSL_KEY_PATH),
+//   cert: fs.readFileSync(process.env.SSL_CERT_PATH),
+// }, app);
 
 // const start = async () => {
 //   try {
 //     await connectDB(process.env.MONGO_URI);
-//     app.listen(port, () => {
-//       console.log(`Server is listening to port ${port}...`)
+//     sslServer.listen(port, () => {
+//       console.log(`SSL Server listening to port ${port}...`);
 //     });
 //   } catch (error) {
 //     console.error(error);
@@ -73,3 +60,16 @@ start();
 // }
 
 // start();
+
+const start = async () => {
+  try {
+    await connectDB(process.env.MONGO_URI);
+    app.listen(port, () => {
+      console.log(`Server is listening to port ${port}...`)
+    });
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+start();
