@@ -3,6 +3,9 @@ const attendanceTile = document.getElementById("attendanceTile");
 const gradesTile = document.getElementById("gradesTile");
 const logoutBtn = document.querySelector(".btn-logout");
 const contentArea = document.getElementById("content-area");
+const changePasswordBtn = document.getElementById("changePasswordBtn");
+const passwordModal = document.getElementById("passwordModal");
+const passwordForm = document.getElementById("passwordForm");
 
 axios.interceptors.request.use(config => {
   const token = localStorage.getItem("token");
@@ -11,6 +14,14 @@ axios.interceptors.request.use(config => {
   }
   return config;
 });
+
+function openModal(modal) {
+  modal.style.display = "flex";
+}
+
+function closeModal(modal) {
+  modal.style.display = "none";
+}
 
 profileTile.addEventListener("click", async () => {
   try {
@@ -74,6 +85,26 @@ gradesTile.addEventListener("click", async () => {
     `;
   } catch (err) {
     console.error("Error loading grades:", err);
+  }
+});
+
+passwordForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const currentPassword = document.getElementById("currentPassword").value;
+  const newPassword = document.getElementById("newPassword").value;
+
+  try {
+    await axios.put("/api/v1/student/changepassword", {
+      currentPassword,
+      newPassword
+    });
+    alert("Password updated successfully!");
+    closeModal(passwordModal);
+    passwordForm.reset();
+  } catch (err) {
+    console.error("Error changing password:", err);
+    alert(err.response?.data?.msg || "Something went wrong");
   }
 });
 

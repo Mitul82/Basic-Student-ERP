@@ -13,6 +13,7 @@
         <div class="header-actions">
         <span class="student-name"></span>
         <button class="btn-logout">Logout</button>
+        <button class="btn-change-password" id="btn-change-password">Change Password</button>
         </div>
     </header>
 
@@ -33,6 +34,23 @@
             <h2>Select a tile above</h2>
         </section>
     </main>
+
+    <div id="passwordModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Change Password</h2>
+            <form id="passwordForm">
+                <label>Current Password</label>
+                <input type="password" id="currentPassword" required title="Enter current password" placeholder="Enter current password">
+
+                <label>New Password</label>
+                <input type="password" id="newPassword" required title="Enter new password" placeholder="Enter new password">
+
+                <button type="submit" class="btn">Update Password</button>
+            </form>
+        </div>
+    </div>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.11.0/axios.min.js"
     integrity="sha512-h9644v03pHqrIHThkvXhB2PJ8zf5E9IyVnrSfZg8Yj8k4RsO4zldcQc4Bi9iVLUCCsqNY0b4WXVV4UB+wbWENA=="

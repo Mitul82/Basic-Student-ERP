@@ -13,7 +13,7 @@ body {
   padding: 15px 20px;
 }
 
-.btn-logout {
+.btn-logout, .btn-change-password{
   background: #b57aff;
   color: #fff;
   border: none;
@@ -22,7 +22,7 @@ body {
   cursor: pointer;
 }
 
-.btn-logout:hover {
+.btn-logout:hover, .btn-change-password:hover {
   background: #63428b;
   transition: 0.35s ease-in-out;
 }

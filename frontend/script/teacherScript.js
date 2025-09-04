@@ -3,9 +3,12 @@ const gradeModal = document.getElementById("gradeModal");
 const studentsListLink = document.getElementById("stdList");
 const studentsAttendanceLink = document.getElementById("stdAttend");
 const studentsGradesLink = document.getElementById("stdGrade");
+const changePasswordLink = document.getElementById("changePassword");
 const closeButton = document.querySelectorAll(".close");
 const studentsTable = document.querySelector("table tbody");
 const logoutBtn = document.querySelector(".btn-logout");
+const passwordModal = document.getElementById("passwordModal");
+const passwordForm = document.getElementById("passwordForm");
 
 let classFilter = document.getElementById("classFilter");
 if (!classFilter) {
@@ -62,6 +65,11 @@ studentsAttendanceLink.addEventListener("click", (e) => {
 studentsGradesLink.addEventListener("click", (e) => {
   e.preventDefault();
   openModal(gradeModal);
+});
+
+changePasswordLink.addEventListener("click", (e) => {
+  e.preventDefault();
+  openModal(passwordModal);
 });
 
 async function fetchStudents() {
@@ -150,6 +158,26 @@ gradeModal.querySelector("form").addEventListener("submit", async (e) => {
     fetchStudents();
   } catch (err) {
     console.error("Error updating grade:", err);
+  }
+});
+
+passwordForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const currentPassword = document.getElementById("currentPassword").value;
+  const newPassword = document.getElementById("newPassword").value;
+
+  try {
+    await axios.put("/api/v1/teachers/changepassword", {
+      currentPassword,
+      newPassword
+    });
+    alert("Password updated successfully!");
+    closeModal(passwordModal);
+    passwordForm.reset();
+  } catch (err) {
+    console.error("Error changing password:", err);
+    alert(err.response?.data?.msg || "Something went wrong");
   }
 });
 
