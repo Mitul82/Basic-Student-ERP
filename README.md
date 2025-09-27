@@ -158,3 +158,4 @@ This project can be deployed on:
 **Mitul Srivastava**  
 📧 [mitulsrivas@gmail.com](mailto:mitulsrivas@gmail.com)  
 🌐 [LinkedIn](https://www.linkedin.com/in/mitul82/)
+🌐 [Live demo](https://basic-student-erp.onrender.com/)
